@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.dashboard {
+  background: #f1f5f7;
+  display: grid;
+  grid-template-areas:
+    "side head"
+    "side _main";
+  grid-template-columns: 235px 1fr;
+  grid-template-rows: 60px 1fr;
+}
+
+aside {
+  background: #0e2238;
+  grid-area: side;
+}
+
+header {
+  background: #ffffff;
+  grid-area: head;
+}
+
+main {
+  grid-area: _main;
+}
+
+.inventory-text {
+  margin-left: -25px;
+  position: relative;
+  cursor: pointer;
+  color: #0e2238;
+}
+
+.custom-list li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 10px;
+}
+
+.inventory-text::before {
+  content: "";
+  position: absolute;
+  left: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-image: url("../images/cart-flatbed-solid.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.inventory-text::after {
+  content: "";
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-image: url("../images/dropdown-arrow-icon.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.menu {
+  position: relative;
+}
+
+.submenu {
+  position: absolute;
+  top: 100%;
+  transform: translateY(00px);
+}
+
+.locations li {
+  margin-bottom: 5px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.locations li:hover {
+  font-weight: bold;
+}
+
+.locations li:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: -14px; /* Adjust the value to control the position of the line */
+  top: 18px; /* Adjust the value to align the line with the text */
+  height: 80%; /* Full height of the list item */
+  border-left: 1px solid gray; /* Color and width of the line */
+}
+
+.main-navbar {
+  width: 80px;
+}
+
+.notification,
+.user {
+  color: #0e2238;
+}
+
+.notification-count {
+  font-size: 12px;
+}
+
+.table-header th {
+  color: #0e2238;
+  background: #f6f6f6;
+  border-radius: 2px;
+}
